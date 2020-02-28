@@ -7,7 +7,7 @@ components:
     memoryLimit: 1024Mi
     type: dockerimage
     alias: cf-hpa
-    image: 'simple-docker-repo.cfapps.sap.hana.ondemand.com/hpa-theia:chex5'
+    image: 'simple-docker-repo.cfapps.sap.hana.ondemand.com/hpa-cc:1.0'
 apiVersion: 1.0.0
 commands:
   - name: Init Project
