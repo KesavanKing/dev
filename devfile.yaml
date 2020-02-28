@@ -1,0 +1,19 @@
+metadata:
+  name: cf-hpa
+components:
+  - id: redhat/java11/latest
+    type: chePlugin
+  - mountSources: true
+    memoryLimit: 1024Mi
+    type: dockerimage
+    alias: cf-hpa
+    image: 'simple-docker-repo.cfapps.sap.hana.ondemand.com/hpa-theia:chex5'
+apiVersion: 1.0.0
+commands:
+  - name: Init Project
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}'
+        type: exec
+        command: cp -r /home/node/hpa /projects
+        component: cf-hpa
+
